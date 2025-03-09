@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Yazar Adı] | Yazarın Dünyası</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5e8; /* Bej arka plan */
+            color: #333;
+            line-height: 1.6;
+        }
+        .hero {
+            position: relative;
+            height: 400px;
+            background: url('hero-gorsel.jpg') no-repeat center/cover; /* Ahmet Ümit tarzı görsel */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+        .nav {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            text-align: center;
+        }
+        .nav a {
+            color: #d97706;
+            text-decoration: none;
+            margin: 0 25px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #b35900;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h2 {
+            font-size: 2em;
+            color: #4a3c31;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .biyografi-box {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .biyografi-box img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .yapitlar {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .yapit-kart {
+            flex: 1;
+            text-align: center;
+        }
+        .yapit-kart img {
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .galeri {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .galeri img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .galeri img:hover {
+            transform: scale(1.05);
+        }
+        button {
+            background: #d97706;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #b35900;
+        }
+        .iletisim-box {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .iletisim-box a {
+            color: #d97706;
+            text-decoration: none;
+        }
+        .iletisim-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section (Ana Sayfa) -->
+    <section class="hero" id="ana-sayfa">
+        <h1>[Yazar Adı]</h1>
+    </section>
+
+    <!-- Navigasyon -->
+    <nav class="nav">
+        <a href="#ana-sayfa">Ana Sayfa</a>
+        <a href="#biyografi">Biyografi</a>
+        <a href="#yapitlar">Yapıtları</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#iletisim">İletişim</a>
+    </nav>
+
+    <!-- İçerik -->
+    <div class="container">
+        <!-- Biyografi -->
+        <section id="biyografi">
+            <h2>Biyografi</h2>
+            <div class="box biyografi-box">
+                <img src="yazar-foto.jpg" alt="Yazar Fotoğrafı">
+                <div>
+                    <p>[Yazar Adı], [doğum yılı] doğumlu bir yazar. [Üniversite/iş] eğitimi aldıktan sonra, [yıl] yılında yazmaya başladı. Öyküleri ve kitaplarıyla tanınan yazar, edebiyat dünyasında [ödül/başarı] ile dikkat çekiyor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yapıtları -->
+        <section id="yapitlar">
+            <h2>Yapıtları</h2>
+            <div class="yapitlar">
+                <div class="box yapit-kart">
+                    <img src="kitap1.jpg" alt="Kitap 1">
+                    <h3>Kitap Adı 1</h3>
+                    <button onclick="window.open('satinalma-linki1', '_blank')">Satın Al</button>
+                </div>
+                <div class="box yapit-kart">
+                    <img src="kitap2.jpg" alt="Kitap 2">
+                    <h3>Kitap Adı 2</h3>
+                    <button onclick="window.open('satinalma-linki2', '_blank')">Satın Al</button>
+                </div>
+                <div class="box yapit-kart">
+                    <img src="kitap3.jpg" alt="Kitap 3">
+                    <h3>Kitap Adı 3</h3>
+                    <button onclick="window.open('satinalma-linki3', '_blank')">Satın Al</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri -->
+        <section id="galeri">
+            <h2>Galeri</h2>
+            <div class="galeri">
+                <img src="etkinlik1.jpg" alt="Etkinlik 1">
+                <img src="etkinlik2.jpg" alt="Etkinlik 2">
+                <img src="etkinlik3.jpg" alt="Etkinlik 3">
+                <img src="etkinlik4.jpg" alt="Etkinlik 4">
+            </div>
+        </section>
+
+        <!-- İletişim -->
+        <section id="iletisim">
+            <h2>İletişim</h2>
+            <div class="box iletisim-box">
+                <p>E-posta: <a href="mailto:ornek@email.com">ornek@email.com</a></p>
+                <p>Instagram: <a href="instagram-linki" target="_blank">@yazaradi</a></p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
