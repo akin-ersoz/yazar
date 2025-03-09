@@ -16,6 +16,13 @@
         .biyografi-box { display: flex; gap: 30px; align-items: center; }
         .biyografi-box img { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; transition: transform 0.3s ease; }
         .biyografi-box img:hover { transform: scale(1.1); }
+        .biyografi-content { max-width: 70%; }
+        .biyografi-content p { 
+            margin: 5px 0; 
+            font-size: 1em; 
+            text-align: justify; 
+            line-height: 1.5; 
+        }
         .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; z-index: 1000; }
         .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
         .lightbox.active { display: flex; }
@@ -32,15 +39,12 @@
     <div class="container">
         <section id="biyografi">
             <h2>Biyografi</h2>
-            <div class="box biyografi-box">                
-                <div>
-                    <p>
-                        1963 yılında anne ve babasının öğretmen olduğu Diyarbakır'da doğdu. Diyarbakır'da başlayan öğrenim yaşamı Samsun'da devam etti. Samsun 19 Mayıs Lisesini, 19 Mayıs Üniversitesi Eğitim Fakültesi Türk Dili ve Edebiyatı Bölümünü bitirdi. Çeşitli kentlerde çalıştıktan sonra halen mezun olduğu lisede görev yapmaktadır.
-                       
-                        Öykü, inceleme, eleştiri ve gezi yazıları Kuzeysu, Samsun Sanat, Edebiyat Nöbeti, Mavi Yeşil, Öykü Gazetesi, Litera Edebiyat, Artemis, Mühür, Şehir, Lacivert, Bizim Çağ Edebiyat, Maraşantiya, Cumhuriyet gazetesi, Cumhuriyet Kitap ve Hürriyet Seyahat gibi dergilerde ve gazetelerde yayımlandı.
-                       
-                        "Aşina Karşılaşmalar" "Allı Güllü Perdeler" adlı öykü kitapları ile "Gizemli Mektuplar" adlı romanı var.
-                    </p>
+            <div class="box biyografi-box">
+                <img src="images/yazar-foto.jpg" alt="Yazar Fotoğrafı" onclick="showLightbox('images/yazar-foto.jpg')">
+                <div class="biyografi-content">
+                    <p>1963 yılında anne ve babasının öğretmen olduğu Diyarbakır’da doğdu. Diyarbakır’da başlayan öğrenim yaşamı Samsun’da devam etti. Samsun 19 Mayıs Lisesi’nden, 19 Mayıs Üniversitesi Eğitim Fakültesi Türk Dili ve Edebiyatı Bölümü’nden bitirdi. Çeşitli kentlerde çalıştıktan sonra halen mecburi hizmet nedeniyle görev yapmaktadır.</p>
+                    <p>Öykü, inceleme, eleştiri ve gezi yazıları Kuzeysu, Samsun Sanat, Edebiyat Nöbeti, Mavi Yeşil, Öykü Gazetesi, Litera Edebiyat, Artemis, Mühür, Şehir, Lacivert, Bizim Çağ Edebiyat, Maraşantiya, Cumhuriyet gazetesi, Cumhuriyet Kitap ve Hürriyet Seyahat gibi dergilerde ve gazetelerde yayımlandı.</p>
+                    <p>“Aşina Karşılaşmalar” ve “Allı Güllü Perdeler” adlı öykü kitapları ile “Gizemli Mektuplar” adlı romanı var.</p>
                 </div>
             </div>
         </section>
