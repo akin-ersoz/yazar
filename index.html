@@ -5,22 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akın Ersöz | Ana Sayfa</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f5f5e8; color: #4a3c31; line-height: 1.0; }
-        .hero { position: relative; height: 400px; background: url('images/hero-gorsel.jpg') no-repeat center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .hero h1 { font-size: 3.5em; color: #b35900; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); margin: 0; }
-        .nav { background: #fff; padding: 15px 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); position: sticky; top: 0; text-align: center; }
-        .nav a { color: #d97706; text-decoration: none; margin: 0 25px; font-weight: bold; transition: color 0.3s; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #f5f5e8; 
+            color: #4a3c31; 
+            line-height: 1.4; 
+        }
+        .hero { 
+            position: relative; 
+            height: 150px; 
+            background: url('images/hero-gorsel.jpg') no-repeat center/cover; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 5px 0; 
+        }
+        .hero h1 { 
+            font-size: 6em; /* Başlık boyutu daha da artırıldı */
+            color: #b35900; 
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); 
+            margin: 0; 
+            padding: 0; 
+        }
+        .nav { 
+            background: #fff; 
+            padding: 5px 0; 
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+            position: sticky; 
+            top: 0; 
+            text-align: center; 
+        }
+        .nav a { 
+            color: #d97706; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-weight: bold; 
+            transition: color 0.3s; 
+        }
         .nav a:hover { color: #b35900; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .box { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 5px; 
+        }
+        .box { 
+            background: #fff; 
+            padding: 10px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            cursor: pointer; 
+            margin-bottom: 15px; /* Kutular arası mesafe */
+        }
+        .box:last-child { 
+            margin-bottom: 0; /* Son kutudan sonra boşluk kalmayacak */
+        }
         .box:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); }
-        .biyografi-box { display: flex; gap: 30px; align-items: center; margin-top: 20px; }
-        .biyografi-box img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; transition: transform 0.3s ease; }
+        .biyografi-box { 
+            display: flex; 
+            gap: 15px; 
+            align-items: center; 
+            margin-top: 0; 
+        }
+        .biyografi-box img { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            transition: transform 0.3s ease; 
+        }
         .biyografi-box img:hover { transform: scale(1.1); }
-        .biyografi-box p { font-size: 1.1em; }
-        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; z-index: 1000; }
-        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+        .biyografi-box p { 
+            font-size: 1em; 
+            margin: 0; 
+        }
+        .quote-box { 
+            background: #fff; 
+            padding: 10px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            text-align: center; 
+        }
+        .quote-box p { 
+            font-style: italic; 
+            font-size: 1em; 
+            margin: 0; 
+            color: #b35900; 
+        }
+        .lightbox { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.8); 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 1000; 
+        }
+        .lightbox img { 
+            max-width: 90%; 
+            max-height: 90%; 
+            border-radius: 8px; 
+        }
         .lightbox.active { display: flex; }
+
+        /* Medya Sorgusu - Mobil Cihazlar için (maksimum 768px genişlik) */
+        @media (max-width: 768px) {
+            .hero { 
+                height: 120px; 
+            }
+            .hero h1 { 
+                font-size: 3.5em; /* Mobilde başlık boyutu artırıldı */
+            }
+            .nav { 
+                padding: 2px 0; 
+            }
+            .nav a { 
+                margin: 0 8px; 
+                font-size: 0.9em; 
+            }
+            .container { 
+                padding: 2px; 
+            }
+            .box { 
+                padding: 5px; 
+                margin-bottom: 10px; 
+            }
+            .box:last-child { 
+                margin-bottom: 0; 
+            }
+            .biyografi-box { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 10px; 
+            }
+            .biyografi-box img { 
+                width: 100px; 
+                height: 100px; 
+            }
+            .biyografi-box p { 
+                font-size: 0.9em; 
+            }
+            .quote-box { 
+                padding: 5px; 
+            }
+        }
     </style>
 </head>
 <body>
@@ -41,6 +175,9 @@
                 <p>Merhaba, ben Akın Ersöz. Öykü, inceleme, eleştiri ve gezi yazılarım çeşitli dergi ve gazetelerde yayımlandı. "Aşina Karşılaşmalar", "Allı Güllü Perdeler" adlı öykü kitaplarım ve "Gizemli Mektuplar" adlı romanım ile yazın dünyasında yer alıyorum. Daha fazla bilgi için <a href="biyografi.html" style="color: #d97706;">biyografi</a> sayfamı ziyaret edebilirsiniz!</p>
             </div>
         </div>
+        <div class="box quote-box">
+            <p>“Denizsiz bir kentte yaşayamam herhalde.” – Allı Güllü Perdeler</p>
+        </div>
     </div>
     <div class="lightbox" id="lightbox" onclick="hideLightbox()">
         <img id="lightbox-img" src="" alt="Görsel">
@@ -57,5 +194,6 @@
             lightbox.classList.remove('active');
         }
     </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91dd7d562ccbbd35',t:'MTc0MTU1Mzg5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
