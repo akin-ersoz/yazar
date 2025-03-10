@@ -76,21 +76,22 @@
             flex-direction: column; 
             align-items: center; 
         }
-        .article-box img { 
-            max-width: 100%; 
-            height: auto; 
-            border-radius: 8px; 
-            margin-bottom: 10px; 
-        }
         .article-box a { 
             color: #d97706; 
             text-decoration: none; 
             font-size: 1em; 
             font-weight: bold; 
             transition: color 0.3s; 
+            display: block; 
         }
         .article-box a:hover { 
             color: #b35900; 
+        }
+        .article-box img { 
+            max-width: 300px; 
+            height: auto; 
+            border-radius: 8px; 
+            margin-bottom: 10px; 
         }
         .lightbox { 
             display: none; 
@@ -141,6 +142,7 @@
                 padding: 5px; 
             }
             .article-box img { 
+                max-width: 200px; 
                 margin-bottom: 5px; 
             }
             .article-box a { 
@@ -157,20 +159,24 @@
         <a href="index.html">Ana Sayfa</a>
         <a href="biyografi.html">Biyografi</a>
         <a href="yapitlar.html">Yapıtları</a>
-        <a href="yazilar.html">Yazıları</a> <!-- Yapıtları'ndan sonra taşındı -->
+        <a href="yazilar.html">Yazıları</a>
         <a href="galeri.html">Galeri</a>
         <a href="iletisim.html">İletişim</a>
     </nav>
     <div class="container">
         <h2 style="color: #b35900; text-align: center;">Yazıları</h2>
         <div class="box article-box">
-            <img src="images/berlin-yazi.jpg" alt="Hüzün ve Kederin Başkenti: Berlin">
-            <a href="https://www.hurriyet.com.tr/seyahat/huznun-ve-kederin-baskenti-40273116" target="_blank"></a>
+            <a href="https://www.hurriyet.com.tr/seyahat/huznun-ve-kederin-baskenti-40273116" target="_blank">
+                <img src="images/berlin-yazi.jpg" alt="Hüzün ve Kederin Başkenti: Berlin">
+                Hüzün ve Kederin Başkenti: Berlin
+            </a>
         </div>
         <!-- Örnek ek kutu (isteğe bağlı olarak çoğaltılabilir) -->
         <div class="box article-box">
-            <img src="images/sample-article.jpg" alt="Örnek Yazı">
-            <a href="#" target="_blank">Örnek Yazı Başlığı</a>
+            <a href="#" target="_blank">
+                <img src="images/sample-article.jpg" alt="Örnek Yazı">
+                Örnek Yazı Başlığı
+            </a>
         </div>
     </div>
     <div class="lightbox" id="lightbox" onclick="hideLightbox()">
